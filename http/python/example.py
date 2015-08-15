@@ -4,7 +4,7 @@ import iotfy
 
 
 def text_data_logger_example():
-    client = iotfy.IotfyClient('5629499534213120', '43d34169-f156-42d3-853e-12bab3b1d479', 'D12345', group="ABC")
+    client = iotfy.IotfyClient('12345', '5abc-4538a-97re', 'D123', group="ABC")
 
     data = []
 
