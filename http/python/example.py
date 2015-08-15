@@ -3,18 +3,38 @@
 import iotfy
 
 
-def example_function():
-    client = iotfy.IotfyClient('12345', '5abc-4538a-97re', 'D12345', group="ABC")
+def text_data_logger_example():
+    client = iotfy.IotfyClient('5629499534213120', '43d34169-f156-42d3-853e-12bab3b1d479', 'D12345', group="ABC")
 
-    txt_response = client.send_txt_data("GPIO_40", "20")
-    uart_response = client.send_txt_data("UART_1", "we-have-got-a-lot-of-data")
-    gps_response = client.send_txt_data("GPS", "$GPGGA,092750.000,5321.6802,N,00630.3372,W,1,8,1.03,61.7,M,55.2,M,,*76")
+    data = []
 
-    result = txt_response.read()
-    if result == '0':
-        print "Successful"
+    data.append({"tag": "GPIO_40, temperature-sensor", "text": "20"})
+    data.append({"tag": "UART_1", "text": "Lots of data for you"})
+
+    response = client.post_text_data(data)
+    if response.code != 200:
+        print "ERROR !"
     else:
-        print "Oh no ! It failed !"
-        print result
+        result = response.read()
+        if result == '0':
+            print "Successful"
+        else:
+            print "Oh no ! It failed !"
+            print result
 
-    # Same handling for all other responses
+
+def file_upload_example():
+    client = iotfy.IotfyClient('12345', '5abc-4538a-97re', 'D123', group="ABC")
+
+    filename = "README.md"
+    with open(filename, "rb") as f:
+        upload_response = client.upload_file(filename, "text/plain", f.read(), "hello, blob")
+        if upload_response.code != 200:
+            print "ERROR !"
+        else:
+            result = upload_response.read()
+            if result == '0':
+                print "Upload Successful"
+            else:
+                print "Oh no ! It failed !"
+                print result
