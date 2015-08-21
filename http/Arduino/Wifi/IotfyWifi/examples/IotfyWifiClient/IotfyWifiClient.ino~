@@ -1,0 +1,41 @@
+/*
+//Keep extra care for sending the JSON, because it interprets special characters, so use escape char along.
+*/
+
+#include <IotfyWifi.h>
+#include <WiFi.h>
+#include <SPI.h>
+
+IotfyWifiClass IotfyWifi(DEBUG_ON);  
+
+
+char ssid[] = "Thou_Shall_Not_Pass"; //  your network SSID (name)
+char pass[] = "9999829195";    // your network password (use for WPA, or use as key for WEP)
+int keyIndex = 0;            // your network key Index number (needed only for WEP)
+
+String X_ID="5715999101812736";
+String X_CLIENT="49028b37-ab1b-4690-a315-4f0b64f6e5e0";
+
+
+void setup()
+{
+ 
+Serial.begin(9600);
+int x=IotfyWifi.init(ssid,pass);
+if (x==0)
+  {
+    Serial.println("Wifi configured");
+    IotfyWifi.printWifiStatus();
+    IotfyWifi.set_id(X_ID,X_CLIENT);
+  }
+
+}
+
+void loop()
+{
+   IotfyWifi.postdata("GPIO1",(String)1010);
+   IotfyWifi.getdata(800,4);
+   Serial.println("outa getdata");
+//   delay(5000);
+ 
+}

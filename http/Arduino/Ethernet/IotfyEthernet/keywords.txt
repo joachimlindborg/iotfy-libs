@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For Ultrasound
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+_debugflag	KEYWORD1
+X_IOTFY_ID
+X_IOTFY_CLIENT
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+IotfyClass(int);
+int init(byte arr[], IPAddress ip);
+void set_id(String, String);
+void print_ip_address();
+void postdata(String,int);
+String getdata(int,int);
+void debug(String);
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+server="www.iotfy-ws.appspot.com";
+
