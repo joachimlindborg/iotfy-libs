@@ -6,8 +6,7 @@ import requests
 
 class IotfyClient(object):
 
-    # _api_path = "https://iotfy-ws.appspot.com/api/logger/v1"
-    _api_path = "http://localhost:8080/api/logger/v1"
+    _api_path = "https://iotfy-ws.appspot.com/api/logger/v1"
     _post_txt_path = "/post_text_data"
     _post_file_path = "/post_file_info"
 
