@@ -63,6 +63,6 @@ After this call is successful, the response contains an upload_url on which you 
 
 See the python example as a guide to how to use this call.
 
-We highly suggest that you use HTTPS when using these API calls. Using HTTP is unsafe and can expose your data to unwanted parties.
+**We highly suggest that you use HTTPS when using these API calls. Using HTTP is unsafe and can expose your data to unwanted parties.**
 
 Feel free to create code in other languages and for other environments based on the above specifications. To submit your code for the comunnity to use, just create a pull-request and we would be happy to include your code here.
