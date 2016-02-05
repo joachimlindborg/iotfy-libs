@@ -9,12 +9,12 @@
 IotfyWifiClass IotfyWifi(DEBUG_ON);  
 
 
-char ssid[] = "Thou_Shall_Not_Pass"; //  your network SSID (name)
-char pass[] = "9999829195";    // your network password (use for WPA, or use as key for WEP)
+char ssid[] = "MY_SSID"; //  your network SSID (name)
+char pass[] = "MY_PASSWORD";    // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
-String X_ID="XXXXXXXXXXXXXXXXXX";
-String X_CLIENT="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX";
+String X_ID="XXXXXXXXXXX";
+String X_CLIENT="XXXXXXXX";
 
 
 void setup()
