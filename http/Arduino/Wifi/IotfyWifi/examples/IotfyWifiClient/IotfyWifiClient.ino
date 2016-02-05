@@ -10,11 +10,11 @@ IotfyWifiClass IotfyWifi(DEBUG_ON);
 
 
 char ssid[] = "MY_SSID"; //  your network SSID (name)
-char pass[] = "MY_PASSWORD";    // your network password (use for WPA, or use as key for WEP)
-int keyIndex = 0;            // your network key Index number (needed only for WEP)
+char pass[] = "MY_PASS";    // your network password (use for WPA, or use as key for WEP)
+int keyIndex = 0;            // your network key Index number s(needed only for WEP)
 
-String X_ID="XXXXXXXXXXX";
-String X_CLIENT="XXXXXXXX";
+String X_ID="XXXXXX";
+String X_CLIENT="XXXXXX";
 
 
 void setup()
@@ -43,7 +43,7 @@ void loop()
 {
    for(int i=0;i<1024;i++)
   {
-   IotfyWifi.postdata("ArduinoWIFI_IOTFY","D001","GPIO1",(String)i);
+   IotfyWifi.postdata("DemoSensors","TEST001","GPIO1",(String)i);
    IotfyWifi.getdata(800,4);
    Serial.println("outa getdata");
   }

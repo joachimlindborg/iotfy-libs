@@ -41,13 +41,13 @@ String data="\{\"group\":\"";
 data+=group_iotfy;
 data+="\", \"device\":\"";
 data+=id_iotfy;
-data+="\", \"data\":\"";
+data+="\", \"data\":";
 data+="\[\{\"tag\":\"";
 data+=tag_iotfy;
 data+="\",\"text\":\"";
 data+=value_iotfy;
-data+="\"]\}\"";
-
+data+="\"\}]\}";
+Serial.println(data);
 while(1)
 {
 	debug("Trying to connect");
