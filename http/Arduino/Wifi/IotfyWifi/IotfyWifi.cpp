@@ -39,13 +39,14 @@ debug("in postdata");
 char *server="www.iotfy-ws.appspot.com";
 String data="\{\"group\":\"";
 data+=group_iotfy;
-data+="\", \"device_id\":\"";
+data+="\", \"device\":\"";
 data+=id_iotfy;
-data+="\", \"tag\":\"";
-data+=tag_iotfy;
 data+="\", \"data\":\"";
+data+="\[\{\"tag\":\"";
+data+=tag_iotfy;
+data+="\",\"text\":\"";
 data+=value_iotfy;
-data+="\"}";
+data+="\"]\}\"";
 
 while(1)
 {
