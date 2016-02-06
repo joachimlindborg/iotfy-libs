@@ -1,8 +1,6 @@
 /*
 
 //Keep extra care for sending the JSON, because it interprets special characters, so use escape char along.
-
-
 */
 
 
@@ -14,8 +12,9 @@
 IotfyClass Iotfy(DEBUG_ON);  
 byte mac[]={0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(192,168,1,50);
-String X_ID="XXXXXXXXXXX";
-String X_CLIENT="XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX";
+
+String X_ID="XXXXXX";
+String X_CLIENT="XXXXXX";
 
 void setup()
 {

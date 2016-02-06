@@ -39,21 +39,23 @@ debug("in postdata");
 char *server="www.iotfy-ws.appspot.com";
 String data="\{\"group\":\"";
 data+=group_iotfy;
-data+="\", \"device_id\":\"";
+data+="\", \"device\":\"";
 data+=id_iotfy;
-data+="\", \"tag\":\"";
+data+="\", \"data\":";
+data+="\[\{\"tag\":\"";
 data+=tag_iotfy;
-data+="\", \"data\":\"";
+data+="\",\"text\":\"";
 data+=value_iotfy;
-data+="\"}";
-
+data+="\"\}]\}";
+Serial.println(data);
 while(1)
 {
 	debug("Trying to connect");
 	if (client.connect(server, 80))
 	{
 		debug("connected and now sending post request");
-		client.println("POST /d/send_txt_data HTTP/1.1");
+		//client.println("POST /d/send_txt_data HTTP/1.1");
+		client.println("POST /api/telemetry/v1/post_text_data HTTP/1.0");
 		client.println("User-Agent: arduino-ethernet");
 		client.println("Host: www.iotfy-ws.appspot.com");
 		//client.println("X-IOTFY-ID: 5715999101812736");
